@@ -4,6 +4,7 @@ import AstroPureIntegration from 'astro-pure'
 import { defineConfig, fontProviders } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
+import netlify from '@astrojs/netlify'
 
 // Local integrations
 import rehypeAutolinkHeadings from './src/plugins/rehype-auto-link-headings.ts'
@@ -29,6 +30,7 @@ export default defineConfig({
   // Deploy to a sub path
   // https://astro-pure.js.org/docs/setup/deployment#platform-with-base-path
   // base: '/astro-pure/',
+  base: '/',
   trailingSlash: 'never',
   // root: './my-project-directory',
   server: { host: true },
@@ -36,7 +38,8 @@ export default defineConfig({
   // [Adapter]
   // https://docs.astro.build/en/guides/deploy/
   adapter: vercel(),
-  output: 'server',
+  // output: 'server',
+  output: 'static',
   // Local (standalone)
   // adapter: node({ mode: 'standalone' }),
   // output: 'server',
