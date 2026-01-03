@@ -1,55 +1,59 @@
 import { glob } from 'astro/loaders'
 import { defineCollection, z } from 'astro:content'
-import { POSTS_CONFIG } from '~/config'
-import type { CoverLayout, PostType } from '~/types'
 
-const posts = defineCollection({
-  loader: glob({
-    pattern: '**/*.{md,mdx}',
-    base: './src/content/posts',
-  }),
-  schema: ({ image }) =>
-    z
-      .object({
-        title: z.string(),
-        description: z.string(),
-        pubDate: z.date(),
-        tags: z.array(z.string()).optional(),
-        updatedDate: z.date().optional(),
-        author: z.string().default(POSTS_CONFIG.author),
-        cover: image().optional(),
-        ogImage: image().optional(),
-        recommend: z.boolean().default(false),
-        postType: z.custom<PostType>().optional(),
-        coverLayout: z.custom<CoverLayout>().optional(),
-        pinned: z.boolean().default(false),
-        draft: z.boolean().default(false),
-        license: z.string().optional(),
-      })
-      .transform((data) => ({
-        ...data,
-        ogImage: POSTS_CONFIG.ogImageUseCover && data.cover ? data.cover : data.ogImage,
-      })),
-})
+function removeDupsAndLowerCase(array: string[]) {
+  if (!array.length) return array
+  const lowercaseItems = array.map((str) => str.toLowerCase())
+  const distinctItems = new Set(lowercaseItems)
+  return Array.from(distinctItems)
+}
 
-const projects = defineCollection({
-  loader: glob({
-    pattern: '**/*.{md,mdx}',
-    base: './src/content/projects',
-  }),
+// Define blog collection
+const blog = defineCollection({
+  // Load Markdown and MDX files in the `src/content/blog/` directory.
+  loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
+  // Required
   schema: ({ image }) =>
     z.object({
-      name: z.string(),
-      description: z.string(),
-      githubUrl: z.string(),
-      website: z.string(),
-      type: z.string(),
-      icon: image().optional(),
-      imageClass: z.string().optional(),
-      star: z.number(),
-      fork: z.number(),
+      // Required
+      title: z.string().max(60),
+      description: z.string().max(160),
+      publishDate: z.coerce.date(),
+      // Optional
+      updatedDate: z.coerce.date().optional(),
+      heroImage: z
+        .object({
+          src: image(),
+          alt: z.string().optional(),
+          inferSize: z.boolean().optional(),
+          width: z.number().optional(),
+          height: z.number().optional(),
+
+          color: z.string().optional()
+        })
+        .optional(),
+      tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+      language: z.string().optional(),
       draft: z.boolean().default(false),
-    }),
+      // Special fields
+      comment: z.boolean().default(true)
+    })
 })
 
-export const collections = { posts, projects }
+// Define docs collection
+const docs = defineCollection({
+  loader: glob({ base: './src/content/docs', pattern: '**/*.{md,mdx}' }),
+  schema: () =>
+    z.object({
+      title: z.string().max(60),
+      description: z.string().max(160),
+      publishDate: z.coerce.date().optional(),
+      updatedDate: z.coerce.date().optional(),
+      tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+      draft: z.boolean().default(false),
+      // Special fields
+      order: z.number().default(999)
+    })
+})
+
+export const collections = { blog, docs }

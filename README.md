@@ -1,140 +1,99 @@
+# Astro Theme Pure
 
-<div align="center">
-<img src="./src/assets/readme/logo.png" width="400" alt="Litos Logo" />
+English | [简体中文](./README-zh-CN.md)
 
-# Litos
+A simple, fast and powerful blog & document theme built by Astro.
 
-![License](https://img.shields.io/github/license/Dnzzk2/Litos?color=blue&style=flat-square)
-![Astro](https://img.shields.io/badge/Astro-v5.0-orange?style=flat-square&logo=astro)
-![React](https://img.shields.io/badge/React-v19.0-blue?style=flat-square&logo=react)
-![Tailwind](https://img.shields.io/badge/TailwindCSS-v4.0-38b2ac?style=flat-square&logo=tailwindcss)
-![TypeScript](https://img.shields.io/badge/TypeScript-v5.0-blue?style=flat-square&logo=typescript)
+[![GitHub deployments](https://img.shields.io/github/deployments/cworld1/astro-theme-pure/production?style=flat&logo=vercel&label=vercel)](https://astro-pure.js.org/)
+[![NPM Version](https://img.shields.io/npm/v/astro-pure?logo=npm&style=flat)](https://www.npmjs.com/package/astro-pure)
+[![GitHub Release](https://img.shields.io/github/v/release/cworld1/astro-theme-pure?include_prereleases&style=flat&label=template)](https://github.com/cworld1/astro-theme-pure/releases)
+[![GitHub License](https://img.shields.io/github/license/cworld1/astro-theme-pure?style=flat)](https://github.com/cworld1/astro-theme-pure/blob/main/LICENSE)
 
-**A modern, elegant, and performance-focused blogging theme built for developers.**
+![image](./.github/assets/header.webp)
+![image](./.github/assets/body.webp)
 
-[Demo](https://litos.vercel.app/) · [Report Bug](https://github.com/Dnzzk2/Litos/issues) · [Request Feature](https://github.com/Dnzzk2/Litos/issues)
-
-</div>
-
+> [!NOTE]
+> Known issues: 1. Header & customize options is still under development (template exposed still). 2. Theme template v4.0.5^ UnoCSS preset changed to PresetMini. If there's any problem, please report as issue.
 
 ## Introduction
 
-Litos is a comprehensive blogging theme crafted with **Astro**, **React**, and **TailwindCSS**. It is designed to provide developers with a clean, professional, and highly customizable platform to showcase their work, thoughts, and photography.
+Checkout [Demo Site →](https://astro-pure.js.org/)
 
-Unlike traditional themes, Litos emphasizes visual aesthetics without compromising on performance. It features fluid animations, a polished design system, and a robust set of built-in components to help you build your personal brand effectively.
+### :fire: Features
 
-![Cover image](./src/assets/readme/readme.webp)
+- [x] :rocket: Fast & high performance
+- [x] :star: Simple & clean design
+- [x] :iphone: Responsive design
+- [x] :mag: Full-site search built with [pagefind](https://pagefind.app/)
+- [x] :world_map: Sitemap & RSS feed
+- [x] :spider_web: SEO-friendly
+- [x] :book: TOC (table of contents)
+- [x] :framed_picture: Dynamic open graph generation for posts
+- [x] :framed_picture: Mediumzoom lightbox for images
 
-## Key Features
+### :package: Components
 
-- **Modern Architecture**: Powered by Astro 5 for blazing fast performance and React 19 for dynamic interactivity.
-- **Elegant Design**: A fully responsive, meticulously crafted UI using TailwindCSS 4.
-- **Rich Content Support**:
-  - **Posts**: Multiple layout options (compact, cover image) with extensive markdown support.
-  - **Projects**: Dedicated section to showcase your portfolio with filterable tags.
-  - **Photos**: A beautiful masonry layout for your photography collections.
-- **Developer Centric**:
-  - **Skills Showcase**: Visually represented technical stack configuration.
-  - **Code Highlighting**: Integrated Expressive Code for beautiful syntax highlighting.
-  - **Mathematical Scripts**: Katex support for rendering math equations.
-- **Integrated Features**:
-  - **Comments**: Gitalk integration for GitHub-based comments.
-  - **SEO**: Built-in support for sitemaps, robots.txt, and meta tags.
-  - **Analytics**: Configurable support for Vercount and Umami analytics.
-  - **Dark Mode**: Native support for light and dark themes.
+Theme includes a lot of components, which can not only be used in the theme, but also in other astro projects.
 
-## Getting Started
+> For other astro projects, UnoCSS is required. See [Package README](https://github.com/cworld1/astro-theme-pure/blob/main/packages/pure/README.md#use-with-common-astro-project) for more details.
 
-Follow these simple steps to set up your Litos project locally.
+- Basic components: `Aside`, `Tabs`, `Timeline`, `Steps`, `Spoiler`...
+- Advanced components: `GithubCard`, `LinkPreview`, `Quote`, `QRCode`...
 
-### Prerequisites
+### :white_check_mark: Lighthouse score
 
-Ensure you have the following installed on your machine:
-- **Node.js** (v18 or higher)
-- **pnpm** (recommended package manager)
+[![lighthouse-score](./.github/assets/lighthouse-score.png)](https://pagespeed.web.dev/analysis/https-cworld-top/o229zrt5o4?form_factor=mobile&hl=en)
 
-### Installation
+## Documentation
 
-1.  **Clone the repository**
+[Docs](https://astro-pure.js.org/docs) | [Showcase](https://github.com/cworld1/astro-theme-pure/issues/10)
 
-    ```bash
-    git clone https://github.com/Dnzzk2/Litos.git
-    cd Litos
-    ```
+## Package
 
-2.  **Install dependencies**
+See [astro-theme-pure](https://www.npmjs.com/package/astro-pure) on npm.
 
-    ```bash
-    pnpm install
-    ```
+## Local development
 
-3.  **Start the development server**
+Environment requirements:
 
-    ```bash
-    pnpm dev
-    ```
+- [Nodejs](https://nodejs.org/): 18.0.0+
 
-    Your site should now be running at `http://localhost:4321`.
+Clone the repository:
 
-## Configuration
-
-Litos is designed to be easily configurable. The primary configuration file is located at `src/config.ts`.
-
-### Site Settings
-Modify the `SITE` constant to update basic site information:
-```typescript
-export const SITE: Site = {
-  title: 'Litos',
-  description: 'Your site description here.',
-  website: 'https://your-domain.com',
-  author: 'Your Name',
-  // ...other settings
-}
+```shell
+git clone https://github.com/cworld1/astro-theme-pure.git
+cd astro-theme-pure
 ```
 
-### Feature Toggles
-You can enable or disable specific features like the Skills Showcase or GitHub integration directly in the config file:
-```typescript
-export const SKILLSSHOWCASE_CONFIG = {
-  SKILLS_ENABLED: true,
-  // ...
-}
+Useful commands:
 
-export const GITHUB_CONFIG = {
-  ENABLED: true,
-  // ...
-}
+```shell
+# Install dependencies
+bun install
+# Start the dev server
+bun dev
+# Build the project
+bun run build
+# Preview (after the build)
+bun preview
+# Create a new post
+bun pure new
 ```
 
-### Navigation
-Links for the Header and Footer can be managed via `HEADER_LINKS` and `FOOTER_LINKS`.
+## Contributions
 
-## Scripts
+To spend more time coding and less time fiddling with whitespace, this project uses code conventions and styles to encourage consistency. Code with a consistent style is easier (and less error-prone!) to review, maintain, and understand.
 
-| Script | Description |
-| :--- | :--- |
-| `pnpm dev` | Starts the local development server. |
-| `pnpm build` | Builds the site for production. |
-| `pnpm preview` | Previews the built production site locally. |
-| `pnpm format` | Formats code using Prettier. |
-| `pnpm check` | Runs Astro check for diagnostics. |
+## Thanks
+
+- [Astro Cactus](https://github.com/chrismwilliams/astro-theme-cactus)
+- [Astro Resume](https://github.com/srleom/astro-theme-resume)
+- [Starlight](https://github.com/withastro/starlight)
+
+Other third party references are on [Docs#Contributions](https://astro-pure.js.org/docs/advanced/thanks). Appreciate for all open source libraries.
 
 ## License
 
-Distributed under the MIT License. See [MIT LICENSE](LICENSE) for more information.
+This project is licensed under the Apache 2.0 License.
 
-## Star History
-
-<a href="https://www.star-history.com/#Dnzzk2/Litos&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Dnzzk2/Litos&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Dnzzk2/Litos&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Dnzzk2/Litos&type=date&legend=top-left" />
- </picture>
-</a>
-
----
-
-<p align="center">
-made with 💗 by <a href="https://github.com/Dnzzk2">Dnzzk2</a> !
-</p>
+[![Star History Chart](https://api.star-history.com/svg?repos=cworld1/astro-theme-pure&type=Date)](https://star-history.com/#cworld1/astro-theme-pure&Date)
