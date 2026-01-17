@@ -59,25 +59,26 @@ export const theme: ThemeUserConfig = {
   /** Configure the footer of your site. */
   footer: {
     // Year format
-    year: `© 2023 - ${new Date().getFullYear()}`,
+    year: `© ${new Date().getFullYear()}`,
     // year: `© 2019 - ${new Date().getFullYear()}`,
     links: [
       // Registration link
       {
         title: 'Moe ICP 114514sss',
         link: 'https://icp.gov.moe/?keyword=114514',
-        style: 'text-xs text-muted-foreground' // Uno/TW CSS class
+        style: 'text-sm' // Uno/TW CSS class
       },
+      // Privacy Policy link
       {
-        title: 'Moe ICP 114514sss',
-        link: 'https://icp.gov.moe/?keyword=114514',
-        style: 'text-xs text-muted-foreground' // Uno/TW CSS class
+        title: 'Site Policy',
+        link: '/terms/list',
+        pos: 2 // position set to 2 will be appended to copyright line
       }
     ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
-    credits: false,
+    credits: true,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/T-FX', email: 'mailto:aaaaa@126.com' }
+    social: { github: 'https://github.com/T-FX' }
   },
 
   // [Content]
@@ -93,9 +94,9 @@ export const theme: ThemeUserConfig = {
     /** Blog page size for pagination (optional) */
     blogPageSize: 8,
     // Currently support weibo, x, bluesky
-    share: ['weibo']
+    share: ['weibo', 'x', 'bluesky']
   }
-} 
+}
 
 export const integ: IntegrationUserConfig = {
   // [Links]
@@ -127,15 +128,15 @@ export const integ: IntegrationUserConfig = {
   quote: {
     // - Hitokoto
     // https://developer.hitokoto.cn/sentence/#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
-    server: 'https://v1.hitokoto.cn/?c=i',
-    target: `(data) => (data.hitokoto || 'Error')`
+    // server: 'https://v1.hitokoto.cn/?c=i',
+    // target: `(data) => (data.hitokoto || 'Error')`
     // - Quoteable
     // https://github.com/lukePeavey/quotable
     // server: 'http://api.quotable.io/quotes/random?maxLength=60',
     // target: `(data) => data[0].content || 'Error'`
     // - DummyJSON
-    // server: 'https://dummyjson.com/quotes/random',
-    // target: `(data) => (data.quote.length > 80 ? \`\${data.quote.slice(0, 80)}...\` : data.quote || 'Error')`
+    server: 'https://dummyjson.com/quotes/random',
+    target: `(data) => (data.quote.length > 80 ? \`\${data.quote.slice(0, 80)}...\` : data.quote || 'Error')`
   },
   // [Typography]
   // https://unocss.dev/presets/typography
