@@ -6,6 +6,7 @@ export const theme: ThemeUserConfig = {
   title: 'Ndartsy.site Blog',
   /** Will be used in index page & copyright declaration */
   author: 'FStab-On',
+  since: 2024,
   /** Description metadata for your website. Can be used in page metadata. */
   description: 'Stay hungry, stay foolish',
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
@@ -59,18 +60,18 @@ export const theme: ThemeUserConfig = {
   /** Configure the footer of your site. */
   footer: {
     // Year format
-    year: `© 2023 - ${new Date().getFullYear()}`,
+    year: `© ${new Date().getFullYear()}`,
     // year: `© 2019 - ${new Date().getFullYear()}`,
     links: [
       // Registration link
       {
-        title: 'Moe ICP 114514sss',
-        link: 'https://icp.gov.moe/?keyword=114514',
+        title: '萌ICP备20260037号',
+        link: 'https://icp.gov.moe/?keyword=20260037',
         style: 'text-xs text-muted-foreground' // Uno/TW CSS class
       },
       {
-        title: 'Moe ICP 114514sss',
-        link: 'https://icp.gov.moe/?keyword=114514',
+        title: 'Cloudflare',
+        link: 'https://dash.cloudflare.com/',
         style: 'text-xs text-muted-foreground' // Uno/TW CSS class
       }
     ],
