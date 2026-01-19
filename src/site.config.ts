@@ -50,8 +50,9 @@ export const theme: ThemeUserConfig = {
   header: {
     menu: [
       { title: 'Blog', link: '/blog' },
-      { title: 'Docs', link: '/docs' },
       { title: 'Projects', link: '/projects' },
+      { title: 'Archives', link: '/archives' },
+      // { title: 'Docs', link: '/docs' },
       // { title: 'Links', link: '/links' },
       { title: 'About', link: '/about' }
     ]
