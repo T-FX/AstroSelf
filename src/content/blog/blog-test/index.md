@@ -1,7 +1,7 @@
 ---
-title: 用来测试项目文档
+title: Hexo+Butterfly部署静态博客
 publishDate: 2026-01-18 22:03:00
-description: '用来测试项目文档'
+description: 'Hexo+Butterfly部署静态博客'
 tags:
   - Markdown
 # heroImage: { src: './thumbnail.jpg', color: '#B4C6DA' }

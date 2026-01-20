@@ -79,7 +79,7 @@ export const theme: ThemeUserConfig = {
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: false,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/T-FX', email: 'mailto:aaaaa@126.com' }
+    social: { github: 'https://github.com/T-FX', email: 'mailto: fstab_on@163.com' }
   },
 
   // [Content]
@@ -160,7 +160,7 @@ export const integ: IntegrationUserConfig = {
   },
   // Comment system
   waline: {
-    enable: true,
+    enable: false,
     // Server service link
     server: 'https://astro-theme-pure-waline.arthals.ink/',
     // Show meta info for comments
